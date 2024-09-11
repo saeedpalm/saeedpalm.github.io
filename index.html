@@ -4,126 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mafia Fantasy League - Home</title>
-    <style>
-        body {
-            font-family: 'Georgia', serif;
-            background-color: #fdf5e6;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        header {
-            background-color: #333;
-            color: #fdf5e6;
-            padding: 20px;
-            text-align: center;
-            border-bottom: 2px solid #999;
-        }
-        header img {
-            max-width: 150px;
-            height: auto;
-        }
-        nav {
-            margin: 20px 0;
-            text-align: center;
-        }
-        nav a {
-            color: #fdf5e6;
-            background-color: #333;
-            padding: 10px 20px;
-            text-decoration: none;
-            margin: 0 10px;
-            font-family: 'Courier New', Courier, monospace;
-        }
-        nav a:hover {
-            background-color: #555;
-        }
-        .hero-section {
-            background-image: url('images/hero-background.jpg'); /* Replace with your hero image */
-            background-size: cover;
-            background-position: center;
-            color: #fdf5e6;
-            padding: 100px 20px;
-            text-align: center;
-        }
-        .hero-section h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-        }
-        .hero-section p {
-            font-size: 1.5em;
-            margin-bottom: 30px;
-        }
-        .hero-section a {
-            background-color: #333;
-            color: #fdf5e6;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 1.2em;
-        }
-        .hero-section a:hover {
-            background-color: #555;
-        }
-        .content-section {
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .content-section h2 {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .content-section .card {
-            background-color: #fff;
-            border: 1px solid #ccc;
-            padding: 20px;
-            margin: 20px;
-            border-radius: 10px;
-            text-align: center;
-        }
-        .content-section .card img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-            margin-bottom: 15px;
-        }
-        .content-section .card h3 {
-            margin-bottom: 10px;
-            font-size: 1.5em;
-        }
-        .content-section .card p {
-            margin-bottom: 15px;
-        }
-        .content-section .card a {
-            background-color: #333;
-            color: #fdf5e6;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-family: 'Courier New', Courier, monospace;
-        }
-        .content-section .card a:hover {
-            background-color: #555;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: #fdf5e6;
-            border-top: 1px solid #999;
-            font-family: 'Courier New', Courier, monospace;
-        }
-        footer a {
-            color: #fdf5e6;
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="src/css/index.css">
 </head>
 <body>
 
@@ -138,50 +19,13 @@
         </nav>
     </header>
 
-    
-    <!-- Countdown Timer -->
-    <div id="countdown-timer" style="text-align: center; padding: 20px; background-color: #333;">
-       <h2 style="font-family: 'Courier New', Courier, monospace; font-size: 2em; margin-bottom: 10px; color: #fdf5e6;">Countdown to Draft Day</h2>
-       <p id="countdown" style="color: #fdf5e6;"></p>
+
+    <div id="headline-ticker">
+        <marquee behavior="scroll" direction="left">
+            Player of the week: 2x Champ (Taz) // Record: 1-0 // Points: 159 --- Lets give it up for chip as he finally hits the .500 W/L mark
+        </marquee>  
     </div>
 
-    <script>
-        // Set the date for Draft Day (September 1st)
-        var draftDay = new Date("September 1, 2024 20:00:00 UTC").getTime();
-
-        // Update the countdown every second
-        var countdown = setInterval(function() {
-            // Get the current date and time
-            var now = new Date().getTime();
-
-            // Calculate the time remaining until Draft Day
-            var timeRemaining = draftDay - now;
-
-            // Calculate days, hours, minutes, and seconds
-            var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
-
-            // Display the countdown
-            document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-
-            // If the countdown is finished, display a message
-            if (timeRemaining < 0) {
-                clearInterval(countdown);
-                document.getElementById("countdown").innerHTML = "Draft Day has arrived!";
-            }
-        }, 1000);
-    </script>
-
-        <!-- Headline Ticker -->
-        <div id="headline-ticker" style="background-color: #333; color: #fdf5e6; padding: 10px 0; font-family: 'Courier New', Courier, monospace; font-size: 1.2em; border-bottom: 2px solid #999;">
-            <marquee behavior="scroll" direction="left">
-                Draft Day has been set for september 1st (memorial day) at 8pm louisiana swamp time.
-            </marquee>  
-        </div>
-    
-        <!-- Hero Section -->
     <div class="hero-section">
         <h1>Welcome to the Mafia Fantasy League</h1>
         <p>Where strategy meets legacy. Who will rise to the top?</p>
@@ -193,14 +37,13 @@
         <div class="card">
             <h3>League Standings</h3>
             <p>Check out the latest rankings and see where your team stands.</p>
-            <a href="#">View Standings</a>
+            <a href="src/pages/standings.html">View Standings</a>
         </div>
         <div class="card">
             <h3>Player Spotlight</h3>
             <p>Get to know the top players making waves in the league.</p>
             <a href="#">View Spotlight</a>
         </div>
-        
     </section>
 
     <footer>
@@ -210,5 +53,4 @@
     </footer>
 
 </body>
-
 </html>
