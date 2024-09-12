@@ -1,15 +1,24 @@
 /* General Styles */
 body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     font-family: 'Georgia', serif;
     background-color: #fdf5e6;
     color: #333;
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    align-items: space-between;
 }
 
 /* Header */
 header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
     background-color: #333;
     color: #fdf5e6;
     padding: 20px;
@@ -165,6 +174,7 @@ footer a:hover {
 }
 /* General Button Styles */
 .toggle-button {
+    display: flex;
     background-color: #333;
     color: #fdf5e6;
     border: none;
@@ -178,6 +188,13 @@ footer a:hover {
     transition: background-color 0.3s ease;
     box-shadow: none; /* Remove box-shadow */
     border-radius: 0; /* Remove border-radius */
+}
+.matchup-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .toggle-button:hover {
