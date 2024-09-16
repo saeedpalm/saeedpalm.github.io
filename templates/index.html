@@ -117,7 +117,7 @@
 </script>
 
     <div class="hero-section">
-        <a href="{{ url_for('filename='digest') }}">Read the latest Digest</a>
+        <a href="{{ url_for('digest') }}">Read the latest Digest</a>
     </div>
 
     <section class="content-section">
@@ -125,7 +125,7 @@
         <div class="card">
             <h3>League Standings</h3>
             <p>Check out the latest rankings and see where your team stands.</p>
-            <a href="src/pages/standings.html">View Standings</a>
+            <a href="{{ url_for('standings')}}">View Standings</a>
         </div>
         <div class="card">
             <h3>Player Spotlight</h3>

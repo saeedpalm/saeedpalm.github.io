@@ -8,7 +8,7 @@
 <body>
 
     <!-- Back Button to return to homepage -->
-    <a href="{{ url_for('static', filename='index.html') }}" style="display: block; text-align: left; padding: 10px 0; background-color: #333; color: #fdf5e6; text-decoration: none; font-family: 'Courier New', Courier, monospace;">Back to Homepage</a>
+    <a href="{{ url_for('index') }}" style="display: block; text-align: left; padding: 10px 0; background-color: #333; color: #fdf5e6; text-decoration: none; font-family: 'Courier New', Courier, monospace;">Back to Homepage</a>
     
  
      
@@ -33,7 +33,7 @@
         </article>
 
         <article style="display: flex; margin-bottom: 20px; align-items: center;">
-            <img src= ../images/mubarak.jpg alt="MOOBS" style="max-width: 200px; max-height: 200px; margin-right: 20px; border: 1px solid #ccc; filter: grayscale(100%);">
+            <img src= "{{ url_for('images', filename='css/index.css') }}" alt="MOOBS" style="max-width: 200px; max-height: 200px; margin-right: 20px; border: 1px solid #ccc; filter: grayscale(100%);">
 
             <div>
                 <h3 style="font-size: 1.5em; margin-bottom: 10px;">Exclusive Interview: Mubarak speaks out</h3>
