@@ -15,17 +15,21 @@ body {
 /* Header */
 header {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    align-content: center;
-    background-color: #333;
+    align-content: center;background-color: #333;
     color: #fdf5e6;
     padding: 20px;
     text-align: center;
     border-bottom: 2px solid #999;
 }
-
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 header img {
     max-width: 150px;
     height: auto;
