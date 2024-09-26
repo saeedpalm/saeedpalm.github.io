@@ -7,59 +7,24 @@
 </head>
 <body>
 
+        <!-- Header -->
+        <a href="../../index.html" style="display: flex; text-align: left; padding: 10px 0; background-color: #333; color: #fdf5e6; text-decoration: none; font-family: 'Courier New', Courier, monospace;">Back to Homepage</a>
 
+    <header style="text-align: center; padding: 20px; background-color: #333; color: #fdf5e6; border-bottom: 1px solid #999;">
+            <h1 style="font-family: 'Times New Roman', serif; font-size: 3em; margin: 0;">Mafia Fantasy Digest</h1>
+            <p style="font-family: 'Courier New', Courier, monospace; font-size: 1.2em;">Issue #9 - August 30, 2024</p>
+            <img src="image.png" alt="Mafia Fantasy Logo">
+    </header>
 
-    <!-- Countdown Timer -->
-    <div id="countdown-timer" style="text-align: center; padding: 20px; background-color: #333;">
-        <h2 style="font-family: 'Courier New', Courier, monospace; font-size: 2em; margin-bottom: 10px; color: #fdf5e6;">Countdown to Draft Day</h2>
-        <p id="countdown" style="color: #fdf5e6;"></p>
-     </div>
- 
-     <script>
-         // Set the date for Draft Day (September 1st)
-         var draftDay = new Date("September 1, 2024 20:00:00 UTC").getTime();
- 
-         // Update the countdown every second
-         var countdown = setInterval(function() {
-             // Get the current date and time
-             var now = new Date().getTime();
- 
-             // Calculate the time remaining until Draft Day
-             var timeRemaining = draftDay - now;
- 
-             // Calculate days, hours, minutes, and seconds
-             var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-             var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-             var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-             var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
- 
-             // Display the countdown
-             document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
- 
-             // If the countdown is finished, display a message
-             if (timeRemaining < 0) {
-                 clearInterval(countdown);
-                 document.getElementById("countdown").innerHTML = "Draft Day has arrived!";
-             }
-         }, 1000);
-     </script>
- 
          <!-- Headline Ticker -->
-         <div id="headline-ticker" style="background-color: #333; color: #fdf5e6; padding: 10px 0; font-family: 'Courier New', Courier, monospace; font-size: 1.2em; border-bottom: 2px solid #999;">
+        <div id="headline-ticker" style="background-color: #333; color: #fdf5e6; padding: 10px 0; font-family: 'Courier New', Courier, monospace; font-size: 1.2em; border-bottom: 2px solid #999;">
              <marquee behavior="scroll" direction="left">
-                 Draft Day has been set for september 1st (memorial day) at 8pm louisiana swamp time.
+                Week 2 & 3 recaps have been released --------- Player of the week (2): Yassine // Record: 2-0 // Points: 150 --------- Player of the week (3): Saeed Lutfi // Record: 1-2 // Points: 154
              </marquee>  
          </div>
 
-    <!-- Header -->
-    <header style="text-align: center; padding: 20px; background-color: #333; color: #fdf5e6; border-bottom: 1px solid #999;">
-        <h1 style="font-family: 'Times New Roman', serif; font-size: 3em; margin: 0;">Mafia Fantasy Digest</h1>
-        <p style="font-family: 'Courier New', Courier, monospace; font-size: 1.2em;">Issue #9 - August 30, 2024</p>
-        <img src="image.png" alt="Mafia Fantasy Logo">
-    </header>
-    
-    
 
+    
     <!-- Intro Section -->
     <section id="featured-stories" style="border-bottom: 1px solid #999; margin-bottom: 20px; padding-bottom: 20px;">
         <h2 style="font-family: 'Courier New', Courier, monospace; font-size: 2em; margin-bottom: 10px; font-variant: small-caps; letter-spacing: 2px;">Featured Stories</h2>
@@ -67,17 +32,17 @@
         <article style="display: flex; margin-bottom: 20px; align-items: center;">
             <img src="https://m.media-amazon.com/images/I/51THL619eML.jpg" alt="Sadness" style="max-width: 200px; max-height: 200px; margin-right: 20px; border: 1px solid #ccc;">
             <div>
-                <h3 style="font-size: 1.5em; margin-bottom: 10px;">Pre-Draft Power Rankings</h3>
-                <p>Way too Early Power Rankings</p>
-                <a href="../articles/article3.html" style="display: inline-block; margin-top: 10px; padding: 10px 15px; background-color: #333; color: #fdf5e6; text-decoration: none; font-family: 'Courier New', Courier, monospace;">Read Article</a>
+                <h3 style="font-size: 1.5em; margin-bottom: 10px;">Week 2 Recap</h3>
+                <p>Highscoring nail bitters and the rise of new powerhouses?</p>
+                <a href="../articles/article5.html" style="display: inline-block; margin-top: 10px; padding: 10px 15px; background-color: #333; color: #fdf5e6; text-decoration: none; font-family: 'Courier New', Courier, monospace;">Read Article</a>
             </div>
         </article>
         
         <article style="display: flex; margin-bottom: 20px; align-items: center;">
-            <img src="https://th.bing.com/th/id/OIP.tvTbgFQn-T8bWLQHXNWMQAHaIx?rs=1&pid=ImgDetMain" alt="New Contender" style="max-width: 200px; max-height: 200px; margin-right: 20px; border: 1px solid #ccc;">
+            <img src="../images/gazellah.jpg" alt="New Contender" style="max-width: 200px; max-height: 200px; margin-right: 20px; border: 1px solid #ccc;">
             <div>
-                <h3 style="font-size: 1.5em; margin-bottom: 10px;">Big void to be filled</h3>
-                <p>New powerhouse or filler? Pressures on front office to keep league competitive</p>
+                <h3 style="font-size: 1.5em; margin-bottom: 10px;">Week 3 recap</h3>
+                <p>Witnessing rise of the rook and chip, while the demise continues for havoc and others.</p>
                 <a href="../articles/article2.html" style="display: inline-block; margin-top: 10px; padding: 10px 15px; background-color: #333; color: #fdf5e6; text-decoration: none; font-family: 'Courier New', Courier, monospace;">Read Article</a>
             </div>
         </article>
