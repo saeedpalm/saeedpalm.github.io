@@ -67,6 +67,18 @@ class ESPNFantasyFootballClient:
     def get_teams(self):
         return [{"team_name": team.team_name} for team in self.teams]
 
+    def get_standings(self):
+        standings = []
+        for team in self.teams:
+            standings.append({
+                "team_name": team.team_name,
+                "wins": team.wins,
+                "losses": team.losses,
+                "points_for": team.points_for,
+                "points_against": team.points_against
+            })
+        return standings
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -88,6 +100,12 @@ def get_teams():
     client = ESPNFantasyFootballClient()
     teams = client.get_teams()
     return jsonify(teams)
+
+@app.route('/api/standings', methods=['GET'])
+def get_standings():
+    client = ESPNFantasyFootballClient()
+    standings = client.get_standings()
+    return jsonify(standings)
 
 if __name__ == '__main__':
     app.run(debug=True)

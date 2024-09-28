@@ -11,10 +11,11 @@
     <header>
         <h1>Mafia Fantasy League</h1>
         <nav>
-            <a href="#">Home</a>
-            <a href="src/pages/standings.html">Standings</a>
-            <a href="src/pages/players.html">Players</a>
-            <a href="src/pages/digest.html">Digest</a>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('standings') }}">Standings</a>
+            <a href="{{ url_for('players') }}">Players</a>
+            <a href="{{ url_for('digest') }}">Digest</a>
+        </nav>
     </header>
 
 <section>
@@ -28,7 +29,7 @@
 <section>
 
     <div class="hero-section">
-        <a href="src/pages/digest.html">Read the latest Digest</a>
+        <a href="{{ url_for('digest') }}">Read the latest Digest</a>
     </div>
 
     <section class="content-section">
@@ -36,7 +37,7 @@
         <div class="card">
             <h3>League Standings</h3>
             <p>Check out the latest rankings and see where your team stands.</p>
-            <a href="src/pages/standings.html">View Standings</a>
+            <a href="standings.html">View Standings</a>
         </div>
         <div class="card">
             <h3>Player Spotlight</h3>

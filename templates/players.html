@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Standings</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/players.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Mafia Fantasy League</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('standings') }}">Standings</a>
+            <a href="{{ url_for('players') }}">Players</a>
+            <a href="{{ url_for('digest') }}">Digest</a>
+        </nav>
+    </header>
+
+    <section>
+        <div id="headline-ticker">
+            <marquee behavior="scroll" direction="left">
+                Week 2 & 3 recaps have been released --------- Player of the week (2): Yassine // Record: 2-0 // Points: 150 --------- Player of the week (3): Saeed Lutfi // Record: 1-2 // Points: 154
+            </marquee>
+        </div>
+    </section>
+
+    <section>
+        <div class="hero-section">
+            <h2>Standings</h2>
+            <div id="standings-list" class="cards-container"></div>
+        </div>
+    </section>
+
+    <script>
+        async function fetchStandings() {
+            try {
+                const response = await fetch('/api/standings');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const standings = await response.json();
+                console.log('Standings data:', standings); // Debug log
+                const standingsList = document.getElementById('standings-list');
+                standingsList.innerHTML = ''; // Clear any existing content
+                standings.forEach(team => {
+                    const card = document.createElement('div');
+                    card.className = 'card';
+                    card.innerHTML = `
+                        <h3>${team.team_name}</h3>
+                        <p>Wins: ${team.wins}</p>
+                        <p>Losses: ${team.losses}</p>
+                        <p>Points For: ${team.points_for}</p>
+                        <p>Points Against: ${team.points_against}</p>
+                    `;
+                    standingsList.appendChild(card);
+                });
+            } catch (error) {
+                console.error('Error fetching standings:', error);
+            }
+        }
+
+        fetchStandings();
+    </script>
+</body>
+</html>
