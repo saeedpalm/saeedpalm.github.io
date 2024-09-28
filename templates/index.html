@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESPN Fantasy Football Teams</title>
+    <link rel = "stylesheet" href="../static/css/index.css">   
+</head>
+
+<body>
+    <header>
+        <h1>Mafia Fantasy League</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="src/pages/standings.html">Standings</a>
+            <a href="src/pages/players.html">Players</a>
+            <a href="src/pages/digest.html">Digest</a>
+    </header>
+
+<section>
+    <div id="headline-ticker">
+        <marquee behavior="scroll" direction="left">
+            Week 2 & 3 recaps have been released --------- Player of the week (2): Yassine // Record: 2-0 // Points: 150 --------- Player of the week (3): Saeed Lutfi // Record: 1-2 // Points: 154
+        </marquee>
+    </div>
+</section>
+
+<section>
+
+    <div class="hero-section">
+        <a href="src/pages/digest.html">Read the latest Digest</a>
+    </div>
+
+    <section class="content-section">
+        <h2>Featured Sections</h2>
+        <div class="card">
+            <h3>League Standings</h3>
+            <p>Check out the latest rankings and see where your team stands.</p>
+            <a href="src/pages/standings.html">View Standings</a>
+        </div>
+        <div class="card">
+            <h3>Player Spotlight</h3>
+            <p>Get to know the top players making waves in the league.</p>
+            <a href="#">View Spotlight</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Mafia Fantasy League. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:info@mafiafantasy.com">info@mafiafantasy.com</a></p>
+        <p><a href="#">Subscribe to our newsletter</a></p>
+    </footer>
+</section>
+
+    <ul id="teams-list"></ul>
+
+    <script>
+        async function fetchTeams() {
+            try {
+                const response = await fetch('/api/teams');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const teams = await response.json();
+                const teamsList = document.getElementById('teams-list');
+                teams.forEach(team => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = team.team_name;
+                    teamsList.appendChild(listItem);
+                });
+            } catch (error) {
+                console.error('Error fetching teams:', error);
+            }
+        }
+
+        fetchTeams();
+    </script>
+</body>
+</html>
